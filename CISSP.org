@@ -1,0 +1,87 @@
+#+title: CISSP
+*     Domain 1: Security and Risk Management
+** regulatory compliance
+** standards and risk frameworks
+** Incident Response
+*** triage
+**** detection
+**** investigate
+**** Analysis, interpretation, reaction, and recovery
+**** containment
+**** analysis and tracking
+*** recovery and post incident
+**** feedback and lessons learned
+**** metrics and review the response
+**** mandatory reporting
+** international law
+*** copyright
+*** trademarks
+*** patents
+*** intellectual property or trade secret or proprietary information
+** legal regulations and privacy
+*** privacy: PII 
+**** regulations vary by country and or by industry in countries
+**** fourth amendment right to protection from unlawful search and seizure
+*** employee monitoring and surveillance 
+**** Necessity
+**** Finality
+**** Transparency
+**** Legitimacy
+**** Proportionality
+**** Data accuracy
+**** Security
+*** liability: legal responsibility
+** (ISC) 2 Code of Ethics Canons 
+*** compliance with the ISC2 code of ethics is a condition of certification
+***  1) Protect society, the commonwealth, and the infrastructure
+***  2) Act honorably, honestly, justly, responsibly, and legally
+***  3) Provide diligent and competent service to principals
+***  4) Advance and protect the profession
+*** ethical bases
+**** Golden rule – reciprocity
+**** Kant’s categorical imperative - uniformity
+**** Descartes's rule of change – slippery slope
+**** Utilitarian principle – most good
+**** Risk aversion principle – least harm
+**** Avoid harm – do no harm
+**** No free lunch rule – assumes of ownership
+**** Legalism – is it against the law?
+**** Professionalism – is it contrary to the code of ethics?
+**** Demonstrate due care/diligence – reasonable person
+**** Evidentiary guidance – do you have the data?
+**** Client/customer/patient choice – affected people decide
+**** Equity – equal distribution of costs/benefits
+**** Competition – market sets prices/quality
+**** Compassion/last chance – most vulnerable parties protected
+**** Impartiality/objectivity – biases?
+**** Openness/full disclosure – affected persons informed?
+**** Confidentiality – individual security
+**** Trustworthiness/honesty – is IT accountable?
+***  How a Code of Ethics Applies to CISSPs
+**** Informed consent
+**** Higher ethic in the worst case
+**** Change of scale test
+**** Owners’ conservation of ownership
+**** Users’ conservation of ownership
+** legal regulations and ethics
+*** computer game fallacy is the: If the computer let's me do it then it is ok
+the computer lets me do it, it must
+be okay. The game wouldn't let me
+do it if it wasn't all right. Right?Page 5 of 12
+A lot of users, especially
+unsophisticated users, don't realize
+that the computer is not a super-
+genius; 
+*** Law-abiding citizen fallacy: if it isn't illegal it's ok
+*** Shatterproof fallacy: If I'm not doing harm to the system, then it's okay
+*** Candy-from-a-baby fallacy:  If you didn't want me to steal your stuff, you should've hardened your systems
+*** Hacker fallacy
+*** Free information fallacy:  the concept that information should be free. It should be shared widely and available; that human development is best nurtured by the widest dissemination of information
+** Policy and Components
+*     Domain 2: Asset Security
+*     Domain 3: Security Architecture and Engineering
+*     Domain 4: Communication and Network Security
+*     Domain 5: Identity and Access Management (IAM)
+*     Domain 6: Security Assessment and Testing
+*     Domain 7: Security Operations
+*     Domain 8: Software Development Security

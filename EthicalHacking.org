@@ -1,0 +1,861 @@
+#+TITLE: Ethical Hacking
+#+roam_tags: retirement penetration hacking
+#+STARTUP: overview
+
+- get the syntax right
+- get the numbers right (especially the IP address)
+- know if you need root privileges
+- Have a notepad and pencil to write down up addresses and other bits of info
+  
+* The Why
+  people, companies, governments, and other organizations have information and data that they would rather be kept secure.
+** to protect:
+   - data at rest
+   - data in transmission
+* Pen Test Methodology
+** Engagement
+- planning the details
+*** Cost Quote
+*** Proposal
+** Information Gathering
+** Footprinting and Scanning
+** Vulnerability Assessment
+** Exploitation
+** Reporting
+
+* Important Terms
+** CIA
+*** Confidentiality
+*** Integrity
+*** Availability
+** white hat hacker: professional pen tester or ethical hacker who performs authorized attacks against a system helping the client to solve security issues
+** black hat hacker: performs unauthorized attacks against a system to cause damage or for profit
+*** cracker
+** user: computer system user; an employee or external user
+** malicious user: user who misuses or attacks computer systems or applications
+** root or administrator: the users who manage the network or single system; they have the maximum privileges
+** privileges: identify the action that a user is allowed to perform; the higher the privileges the more control over a system the user has
+** security through obscurity: the use of secrecy of design, implementation or configuration in order to provide security; security through obscurity cannot stop a skilled attacker
+** attack: any kind of action aimed at misusing or taking control over a computer system or application; unauthorized access, stealing passwords, denial of service, etc
+** privilege escalation: an attack where a malicious user gains elevated privileges over a system
+** Denial of Service (DoS) attack: malicious user makes a system or service unavailable by saturating resources or making the system unavailable
+** remote code execution: attacker manages to execute some attacker-controlled code on a victim remote machine 
+** shell code: piece of custom code which provides the attacker a shell on the victim machine; generally used during remote code execution attacks
+** daemon: a program that runs a service
+* Cryptography and VPN
+** Clear text = no encryption; easy to intercept, eavesdrop, and alter
+** cryptography can provide confidentiality and integrity
+** tunneling: to transmit clear text over unclear network: 
+   wrap clear text protocol into a cryptographic one
+** VPN uses crypto to extend a private network through a public one like the internet
+** Binary and Hex conversion
+*** Binary   
+|      264 |     132 |     64 |     32 |    16 |    8 |   4 |   2 |   1 |
+|      2^8 |     2^7 |    2^6 |    2^5 |   2^4 |  2^3 | 2^2 | 2^1 | 2^0 |
+| 10000000 | 1000000 | 100000 | 100000 | 10000 | 1000 | 100 |  10 |   1 |
+
+
+
+Examples
+   |  0 |    0 |
+   |  1 |    1 |
+   |  2 |   01 |
+   |  3 |   11 |
+   |  4 |  100 |
+   |  5 |  101 |
+   |  6 |  110 |
+   |  7 |  111 |
+   |  8 | 1000 |
+   |  9 | 1001 |
+   | 10 | 1010 |
+   |    |      |
+   
+**** Bitwise Operations
+***** NOT flips bits; zeroes become ones and ones become zeroes
+      NOT 1101 = 0010
+***** AND logical operation. if both are 1 then 1 otherwise 0
+      1001 AND 1100 = 1000
+***** OR logical operation; if one digit is 1 then 1
+      1001 OR 1100 = 1101
+***** XOR logical exclusive OR; if only 1 digit is 1 then 1, otherwise 0
+      1001 XOR 1100 = 0101
+**** https://www.mathisfun.com/numbers/binary-count-fingers.html
+*** Hexadecimal
+    0-9 A-F
+    marked by 0x at the beginning or h at the end
+         0x3a1 or 3a1h
+  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |  a |  b |  c |  d |  e |  f |
+  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
+
+  | #       | 16^0 | 16^1 | 16^2 |
+  | 3a1     |    1 |    a |    3 |
+  | decimal |    1 |   10 |    3 |
+*** Binary and Hex converters
+   https://www.binaryhexconverter.com/decimal-to-hex-converter
+   https://www.binaryhexconverter.com/hex-to-decimal-converter
+* Tools
+** Traffic Sniffing and Packet Capture
+*** Wireshark: network sniffer tool that allows you to see the data transmitted across the network
+**** Filtering operators
+    and - operator: and / &&
+    or - operator: or / ||
+    equals - operator: eq / ==
+    not equal - operator: ne / !=
+    greater than - operator: gt /  >
+    less than - operator: lt / <
+
+*** TCPDUMP: command line and scripting for packet capture
+*** Netcat or nc
+opens a raw connection to a host; does not work for https, instead use openssl
+*** openssl
+use for https
+** Metasploit
+*** initialize the database: msfdb init
+** HTTP, Web
+*** Burp Suite
+https://portswigger.net/burp/releases/professional-community-2021-9-1?requestededition=community
+** Port Scanning
+*** NMAP: port scanning; check for open ports
+**** NSE: NMAP scripting engine
+***** scripts: https://nmap.org/nsedoc/scripts/
+*** NESSUS
+** WiFi cracking
+*** Aircrack-ng
+** Data Exfiltration
+*** PacketWhisper
+    - used to cloak a file transfer within a series of harmless looking DNS queries
+    - encrypt and extract through a PCAP file
+*** EgressChecker Framework
+    - check for open ports
+     *** configure
+     set PORTS [start] - [end]
+     set TARGETIP [IP]
+     set SOURCEIP [IP]
+     set PROTOCOL tcp
+     generate powershell-cmd
+     
+** Enum4Linux: SMB enumberation
+- enumerate SMB shares in windows and linux
+  $ enum4linux [options] IP
+** Password Cracking
+*** Hydra: fast online password cracking tool
+*** SecLists: dictionaries
+    sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+    
+*** John the Ripper
+
+** Reverse Shell
+- msfvenom to generate a netcat reverse shell shell code
+  - use netcat to listen over the port and operate the shell
+    
+** Remote Desktop
+*** VNC
+https://www.youtube.com/watch?v=3K1hUwxxYek
+https://www.crazy-logic.co.uk/projects/computing/how-to-install-x11vnc-vnc-server-as-a-service-on-ubuntu-20-04-for-remote-access-or-screen-sharing
+
+================
+Commands:
+================
+sudo apt update
+sudo apt install lightdm
+sudo reboot
+sudo apt install x11vnc
+
+sudo nano /lib/systemd/system/x11vnc.service
+
+!Copy and paste these commands - change the password
+[Unit]
+Description=x11vnc service
+After=display-manager.service network.target syslog.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -forever -display :0 -auth guess -passwd password
+ExecStop=/usr/bin/killall x11vnc
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+!Save file and run these commands:
+
+systemctl daemon-reload
+systemctl enable x11vnc.service
+systemctl start x11vnc.service
+systemctl status x11vnc.service
+
+**** login in to remote machine from Mac with Screen sharing App
+** Netcat
+* Linux https://linuxcommand.org/index.php
+** Important System files with user info
+ etc/passwd user names and attributes
+ etc/shadow user password hashes
+ /var/log/auth.log is where unauthorized access attempts go
+** some setups action
+apt install emacs and spacemacs (from github)
+
+apt install git
+apt install ftp
+service start ssh starts the service (ssh in this case) change start to 'stop' to stop the service
+
+systemctl enable ssh: starts the ssh service at boot
+systemctl enable postgresql starts the ssh service at boot
+** CRON
+   CRON
+
+ A crontab is simply a special file with formatting that is recognised by the cron process to execute each line step-by-step. Crontabs require 6 specific values:
+
+ | Value | Description                               |
+ |-------+-------------------------------------------|
+ | MIN   | What minute to execute at                 |
+ | HOUR  | What hour to execute at                   |
+ | DOM   | What day of the month to execute at       |
+ | MON   | What month of the year to execute at      |
+ | DOW   | What day of the week to execute at        |
+ | CMD   | The actual command that will be executed. |
+
+ Let's use the example of backing up files. You may wish to backup "cmnatic"'s  "Documents" every 12 hours. We would use the following formatting: 
+
+ 0 *12 * * * cp -R /home/cmnatic/Documents /var/backups/
+
+* Networking Skills
+- understand all the information in ifconfig and iwconfig, netstat, arp, route
+** Basics
+*** Packet
+    - packet: the basic unit of data transmission
+      packer is made up of header and payload
+**** header
+     - protocol specific
+**** payload
+     - the data
+
+** OSI model (Open Systems Interconnect)
+- fundamental framework of networking
+- Anxious Pale Shakespeare Treated Nervous Drunks Patiently
+  A-P-S-T-N-D-P
+  Please do not throw sausage pizza away
+  P-D-N-T-S-P-A
+  Physical: cables, devices
+  Data: switching, MAC addresses
+  Network: IP addresses, routing
+  Transport: TCP/UDP
+  Session: Session management
+  Presentation: jpeg, moviie file, ,media
+  Applicartion: HTTP, SMTP, applications
+*** 7. Application
+- graphical user interface (GUI)
+*** 6. Presentation
+- standardization begins
+- translator of data to and from application layer 
+*** 5. Session   
+- a session is in place while a connection is active
+- each session is unique
+- data divided up into chunks: packets
+*** 4. Transport (TCP/UDP)
+for TCP/UPD see protocols
+*** 3. Network (IP address) related to router
+- routing and reassembly of data
+- uses IP address exclusively
+- Routers are known as layer 3 devices because they work at OSI model layer 3
+- OSPF: Open Shortest Path First
+- RIP: Routing Information Protocol
+*** 2: Data Link (MAC address) (packets also called frames)  related to switching
+- receives packet from network layer and adds the physical hardware media access control (MAC) address
+*** 1. Physical (MAC address)
+*** 0. The Human Layer (HaHa, this is just a popular joke)
+** Protocols
+*** Internet Protocol Standards
+    https://www.ietf.org/
+*** IP or TCP/IP
+**** Header
+   160 bits (20 bytes)
+ #+DOWNLOADED: file:/Users/jeremy/Dropbox/share/101920_1015_IPPacketHea1.png @ 2021-10-14 11:50:54
+ [[file:Networking_Skills/2021-10-14_11-50-54_101920_1015_IPPacketHea1.png]]
+ 
+**** 4 Layers
+    - each layer serves the one above it
+     1. Application: application/presentation/session
+     2. Transport: transport
+     3. Internet: network
+     4. Network: data link/physical
+       
+***** encapsulation: each layer adds its own header, each upper protocol packet is the payload of the lower one
+      - the receiving host does the same operation in reverse order, removing headers as it goes
+*** IP: the protocol that runs the internet transmitting datagrams (packets)
+**** IP addresses
+***** IPv4 4 bytes or octets (2^32 unique addresses)  xxx.xxx.xxx.xxx  where xxx = 0-255
+      0.0.0.0 - 0.255.255.255 "this network"
+      127.0.0.0 - 127.255.255.255 "local host"
+      192.168.0.0 - 192.168.255.555 "private network"
+      https://datatracker.ietf.org/doc/html/rfc5735
+
+***** IPv6 (2^128 unique addresses) created because we are approaching running out of IPv4 addresses 
+**** IP/MASK
+     subnet mask identifies the part of the network
+***** to find the network prefix part perform bitwise AND operation between the netmask and the IP address
+       ex: 192.168.33.12/255.255.224.0
+***** invert the netmask by performing bitwise NOT
+***** subnetting
+****** CIDR notation
+https://www.ionos.com/digitalguide/server/know-how/cidr-classless-inter-domain-routing/
+***** IP address classes (deprecated)
+| Class   | IP range                    |CIDR
+| Class A | 0.0.0.0 - 127.255.255.25    |
+| Class B | 128.0.0.0 - 191.255.255.255 |
+| Class C | 192.0.0.0 - 223.255.255.255 |
+| Class D | 224.0.0.0 - 239.255.255.255 |
+| Class E | 240.0.0.0 - 255.255.255.255 |
+*** ARP (Address Resolution Protocol)
+    check the arp cache with arp (*nix) or arp -a (win)
+**** Prorocol
+- request
+- reply
+*** HTTP (Hypertext Transfer Protocol)
+- developed by Tim Berners-Lee and his team between 1989-1991
+  http://www.tcpipguide.com/free/t_HTTPOverviewHistoryVersionsandStandards.htm
+https://www.w3.org/
+**** URL (Uniform resource locator)
+https://www.w3.org/TR/uri-clarification/
+     scheme://user@host:port/path?query string#fragment
+***** scheme (http, https, ftp, file, etc)
+***** user: (user:password)
+***** host: the domain name or IP address of the server
+***** port: port you are connecting to, usually 80 for http, 443 for https
+***** path: file name or location of the resource you are trying to access
+***** query string: extra bits of information that can be sent to the requested path
+***** fragment: reference to a location on the actual page being requested
+**** HTTP methods 
+https://hpbn.co/http1x/
+***** GET: get information from a web server
+***** POST: submit data to the web server and potentially create new records
+***** PUT: submit data to the web server to update information
+***** DELETE: delete information or records from a web server
+**** HTTPS
+- secured with asymmetric encryption (TLS and SSL)
+https://httpd.apache.org/docs/2.2/ssl/ssl_intro.html
+**** Python3 Http server $ python3 -m http.server 80
+     $ python3 -m http.server 80
+**** HTTP Status Codes:
+https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+
+ In the previous task, you learnt that when a HTTP server responds, the first line always contains a status code informing the client of the outcome of their request and also potentially how to handle it. These status codes can be broken down into 5 different ranges:
+***** 100-199 - Information Response	These are sent to tell the client the first part of their request has been accepted and they should continue sending the rest of their request. These codes are no longer very common.
+***** 200-299 - Success	This range of status codes is used to tell the client their request was successful.
+***** 300-399 - Redirection	These are used to redirect the client's request to another resource. This can be either to a different webpage or a different website altogether.
+***** 400-499 - Client Errors	Used to inform the client that there was an error with their request.
+***** 500-599 - Server Errors	This is reserved for errors happening on the server-side and usually indicate quite a major problem with the server handling the request.
+
+**** Common HTTP Status Codes:
+
+ There are a lot of different HTTP status codes and that's not including the fact that applications can even define their own, we'll go over the most common HTTP responses you are likely to come across:
+- 200 - OK	The request was completed successfully.
+  
+- 201 - Created	A resource has been created (for example a new user or new blog post).
+- 301 - Permanent Redirect	This redirects the client's browser to a new webpage or tells search engines that the page has moved somewhere else and to look there instead.
+- 302 - Temporary Redirect	Similar to the above permanent redirect, but as the name suggests, this is only a temporary change and it may change again in the near future.
+- 400 - Bad Request	This tells the browser that something was either wrong or missing in their request. This could sometimes be used if the web server resource that is being requested expected a certain parameter that the client didn't send.
+- 401 - Not Authorised	You are not currently allowed to view this resource until you have authorised with the web application, most commonly with a username and password.
+- 403 - Forbidden	You do not have permission to view this resource whether you are logged in or not.
+- 405 - Method Not Allowed	The resource does not allow this method request, for example, you send a GET request to the resource /create-account when it was expecting a POST request instead.
+- 404 - Page Not Found	The page/resource you requested does not exist.
+- 500 - Internal Service Error	The server has encountered some kind of error with your request that it doesn't know how to handle properly.
+- 503 - Service Unavailable	
+ This server cannot handle your request as it's either overloaded or down for maintenance.
+*** TCP (Transmission Control Protocol)
+  - guaranteed packet delivery through the handshake
+  - designed with reliability in mind; guaranteed data transfer
+**** three way handshake connection
+     - sequence number
+     - acknowledgment numbers
+     - SYN and ACK flags
+***** the steps
+         SYN > SYN ACK > ACK
+      1. client sends TCP packet to server with SYN flag enabled and a random sequence number
+      2. server replies by sending a packet with both SYN and ACK flag set and another random sequence number and ack number as the client's sequence number incremented by one 
+      3. client completes the synchronization by sending an ack packet 
+***** anomolies noticed in the three way handshake can imply the presence of a firewall (packet filtering) in a penetration test
+      - DROP: TCP SYN sent but no TCP SYN/ACK reply
+      - DENY: TCP SYN sent but TCP RST/ACK reply received
+        
+*** UDP (User Datagram Protocol)
+    - faster than TCP, but does not guarantee packet delivery
+    - no sync between devices
+    - video streaming
+
+*** DNS (Domain Name System)
+    - application later protocol
+    - translates human readable names to IP addresses and vice versa
+    - widely recognized that the entire security of the internet relies upon DNS
+**** DNS DOCS
+***** DOMAIN NAMES - CONCEPTS AND FACILITIES
+       https://www.ietf.org/rfc/rfc1034.txt
+***** DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION       
+       https://www.ietf.org/rfc/rfc1035.txt
+**** DNS structure
+***** host.subdomain.domain.TLD
+     - Top Level Doamin (TLD)
+     - Domain 
+     - Subdomain (if applicable)
+     - Host
+***** resolvers: servers that contact the Top Level Domain to perform name resolution (local ISP or public like OpenDNS and Google DNS)
+***** Top Level Domain (TLD)
+***** Second level domain
+      - limited to 63 characters (a-f, 0-9, hyphens but can't start with a hyphen)
+***** Subdomain
+      - limited to 63 characters (a-f, 0-9, hyphens but can't start with a hyphen)
+**** DNS resolution algorithm
+***** 1. Recursive Server (resolver) contacts root name server
+      - if the domain is in the recursive server's cache (request has been made by some node previously) then you are done 
+      - root name server contains information about the top level domain
+      - root name servers are hard coded into the resolver
+***** 2. request to TLD for authoritative name server about the domain it is looking for
+***** 3. if there are more than one subdomain step 2 is performed again on the authoritative DNS for each subdomain
+***** 4. Resolver asks for the name resolution of the host part
+**** DNS record types
+***** A resolve to IPv4 address
+***** AAAA resolve to IPv6 address 
+***** CNAME resolve to another domain name (an alias?
+      - example: TryHackMe's online shop has the subdomain name store.tryhackme.com which returns a CNAME record shops.shopify.com
+***** MX resolve to the address of the servers that handle the email for the domain you are querying
+***** TXT free text field where any text data can be stored
+      - example: to list servers that have the authority to send an email on behalf of the domain (this can help in the battle against spam and spoofed email)
+
+*** Windows
+**** NTLM
+**** LDAP (Lightweight Directory Authentication Protocol)
+**** LDAPS: encrypted LDAP
+**** KERBEROS
+- used symmetric cryptography with trusted third party authentication
+
+
+** Routing
+*** router- device that routes packets through the network using a routing table (IP addresses)
+   routing protocols determine the path through the network
+*** routing metrics: as the router sends data around it assigns each path a metric to help determine the best path
+*** check the routing table
+    $ ip route
+    
+** Link Layer Devices and Protocols
+*** security topics
+- MAC spoofing
+- testing switch security
+- sniffing techniques
+- man in the middle attacks
+-
+*** packet forwarding occurs in the lowest later of TCP/IP stack: the link layer
+*** Switches use the link layer address: MAC address
+    - use MAC addresses to forward packets
+    - switches differ by packet forwarding speed; usually 1Gbps is typical commercial switch
+    - forwarding tables bind the MAC address with an interface in the switch
+*** hubs: same purpose as switch but different functionality
+    - simple repeaters forwarding packets on all ports without checking the headers
+    - every node receives the same packets
+*** MAC address
+xx.xx.xx.xx.xx.xx (hexadecimal)
+first three pairs identify the vendor
+*** Address Resolution Protocol (ARP)
+*** Segmentation of the network is done by routers
+    - every interface of a router is attached to a different subnet with a different network address
+    -
+** Ports
+   - identify a single network processs on a machine <IP>:<PORT>
+   - network processes use ports
+   - Ports: 65535
+   - ports are assigned by IANA. reference:
+     https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml
+   - common ports
+     | TCP           |               |
+     | FTP           |            21 |
+     | SSH           |            22 |
+     | Telnet        |            23 |
+     | SMTP          |            25 |
+     | HTTP/HTTPS    |        80/443 |
+     | POP3          |           110 |
+     | SFTP          |           115 |
+     | NETBIOS       | 137, 138, 139 |
+     | SMB           |       139/445 |
+     | IMAP          |           143 |
+     | RDP           |          3389 |
+     | MySQL         |          3306 |
+     | MS SQL Server |          1433 |
+     | UDP           |               |
+     | DNS           |            53 |
+     | DHCP          |        67, 68 |
+     | TFTP          |            69 |
+     | SNMP          |           161 |
+*** TCP/UDP headers identify the source and destination ports
+
+** NAT (Network Address Translation)
+   - home routers run NAT to prevent needing to assign public IPs to each device connecting to the internet
+     - each device on the home network uses the NAT device (router) as its default gateway to access the internet
+     - the router rewrites the source IP address of every packet to the default gateway IP address
+     - a machine on the internet will never know the client's original IP address 
+   - used to provide access to a network from another network also see [[*IP masquerading][IP masquerading]]
+
+
+
+** Common Networking Commands
+- ifconfig (ipconfig for windows) gives your your network information ip address, etc
+- ping sends a packet to [address]
+- arp -a associates ip addresses with mac addresses; can show how machines are interacting
+- netstat -ano shows all open ports and what is connected to those ports
+- route routing table
+- history - shows all the previous commands
+- cat - view a short text file in the terminal
+- less view a text file with scrolling by the spacebar
+- more another way to view a text file
+- touch update access and modification time for a file; creates the file if it doesn't exist
+- grep
+- netstat -tunp (linux) check the listening ports and the current (TCP) connections
+* MITRE
+** CVE: Common Vulnerabilities and Exposures list
+https://cve.mitre.org/
+
+** ATT&CK® (Adversarial Tactics, Techniques, and Common Knowledge) Framework
+https://attack.mitre.org/
+*** 14 Categories
+**** Reconnaissance
+**** Resource Development
+**** Initial Access
+**** Persistence
+**** Privelege Escallation
+**** Defense Evasion
+**** Credential Access
+**** Discovery
+**** Lateral Movement
+**** Collection
+**** Command and Control
+**** Exfiltration
+**** Impact
+** CAR (Cyber Analytics Repository) Knowledge Base
+- knowledge base of analytics developed by MITRE based on the MITRE ATT&CK adversary model
+** SHIELD (sorry, not a fancy acronym) Active Defense
+** AEP (ATT&CK Emulation Plans)
+* Web Applications
+** Client Side
+** Server Side
+* Access Control Methods
+** Privileged Access Management (PAM)
+** Privileged Identity Management (PIM)
+** Bell-La Padula Model
+   - data accessed on a need to know basis
+   - no write down, no read up, "can't read up, can read down"
+   - classified information
+   - user may not be able to access an object but still knows it exists
+** Biba Model
+   - addresses limitation of Bell-La Padula in that confidentiality kept
+     - subjects can create or write content to objects at or below their level but can only read the contents of objects above the subject's level
+   - no write up, no read down, "can read up, can't read down"
+     
+* Attacks and Exploits
+** Request smuggling
+** Cross Site Scripting (XSS)
+** IP masquerading
+   - provide access to a network from another network
+** File Inclusion (HTTP)
+Local File Inclusion (LFI),
+Remote File Inclusion (RFI), and
+directory traversal
+** IDOR
+** zerologon
+- uses multiple RPC connects and DCERPC request to change the machine account password; can be verified through packet analysis
+
+* Cyber Kill chain: seven-stage Cyber Attack Lifecycle
+https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html
+** Reconnaissance: harvesting email addresses, conference information, etc
+** Weaponization: coupling exploit with backdoor into deliverable payload
+** Delivery: delivering weaponized bundle to the victim via email, web, usb, etc
+** Exploitation: exploiting a vulnerability to execute code on victim's system
+** Installation: installing malware on the asset
+** Command and Control: command channel for remote manipulation of victim
+** Actions on Objectives: with hands on keyboard access, intruders accomplish their original goals
+* Cyber Incident Response Cycle with attacker equivalent
+** Identify / Recon
+** Protect / Access
+** Detect / Gather
+** Respond / Exfiltrate
+** Recover / Profit
+* Threat Intelligence or Cyber Threat Intelligence
+- gathering information on an adversary's TTPs
+** Indicators of Compromise (IOCs)
+*** Yara - pattern matcher
+*** Loki - IOC scanner
+*** Thor
+*** Fenrir
+*** YAYA - tool to manage yara repositories
+** Intelligence Gathering
+*** Google Hacking
+**** site: returns results only from the specified website address
+**** inurl: returns results that have the specified word in the URL
+**** filetype: returns results which are a particular file extension
+**** intitle: returns results that contain the specified word in the title
+*** Wappalyzer
+   - online tool and browser extension that helps identify what technologies a website uses, such as frameworks, Content Management Systems (CMS), payment processors and much more, and it can even find version numbers as well
+   - https://www.wappalyzer.com/
+*** Wayback machine
+   - historical archive of websites that dates back to the late 90s. You can search a domain name, and it will show you all the times the service scraped the web page and saved the contents. This service can help uncover old pages that may still be active on the current website
+   - https://archive.org/web/
+
+*** GitHub
+*** Automated Content Discovery Tools
+**** ffuf: A fast web fuzzer written in Go.
+    - an open source web fuzzing tool, intended for discovering elements and content within web applications, or web servers. What do we mean by this? Often when you visit a website you will be presented with the content that the owner of the website wants to serve you with, this could be hosted at a page such as index.php. Within security, often the challenges in a website that need to be corrected exist outside of that. For example, the owner of the website may have content hosted at admin.php, that you both want to know about, and test. FFUF is a tool for uncovering those items, for your purusal
+
+    - https://github.com/ffuf/ffuf
+    - https://codingo.io/tools/ffuf/bounty/2020/09/17/everything-you-need-to-know-about-ffuf.html#what-is-ffuf--and-what-is-it-used-for
+
+
+**** dirb (kali built in)
+    - Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the responses
+    - https://www.kali.org/tools/dirb/
+
+**** gobuster
+    - tool used to brute-force URIs including directories and files as well as DNS subdomains
+
+*** Subdomain Enumeration
+**** OSINT
+***** SSL/TSL Certificates
+     - SSL/TLS Certificates
+ When an SSL/TLS (Secure Sockets Layer/Transport Layer Security) certificate is created for a domain by a CA (Certificate Authority), CA's take part in what's called "Certificate Transparency (CT) logs". These are publicly accessible logs of every SSL/TLS certificate created for a domain name. The purpose of Certificate Transparency logs is to stop malicious and accidentally made certificates from being used. We can use this service to our advantage to discover subdomains belonging to a domain
+
+     - https://crt.sh and https://transparencyreport.google.com/https/certificates offer a searchable database of certificates that shows current and historical results.
+***** Google searching
+***** DNS bruteforce: dnsrecon
+     dnsrecon -t brt -d website.com
+     ./sublist3r.py -d acmeitsupport.thm
+
+* Firewalls and Network Defense
+ - many devices or appliances are available to perform access control, attack detection and prevention
+** Firewalls: software modules running on a computer or device
+   - filter packets coming in or going out of a network
+   - control access to resources and services
+   - can work on different layers
+   - firewalls and anti-virus are often not enough to be secure
+*** packet filtering firewalls filter packets according to rules
+**** common packet filtering operations
+    - allow: allow the packet to pass
+    - drop: drop the packet with no message to the packet source
+    - deny: do not let the packet past but notify the source
+**** packet filtering is not enough to stop layer 7 (application) attacks
+*** application layer firewall work by checking all 7 layers
+    - drop any peer - peer packets
+    - prevent users from visiting certain sites
+** IDS (Intrusion Detection)
+   - inspect application payloads to detect potential attacks
+   - used for detecting ongoing intrusions (ping sweeps, port scans, SQL injections, buffer overflows, etc)
+   - can identify traffic created by known attacks
+   - uses signatures to detect risky traffic from known attack vectors
+   - false positives: when legitimate traffic is flagged as malicious
+   - can detect suspicious activities and report them to the admin 
+*** NIDS Network-based IDS
+    - sensors are placed on a router or in a network with high intrusion risk like the DMZ
+*** HIDS Host-based IDS
+    - monitor application logs, file system changes, and OS configuration changes
+** IPS (Intrusion Prevention System)
+   - drop malicious requests when the threat has a risk classification above a pre-defined threshhold
+** Antivirus
+*** Signature: known malware 
+*** Behavior or Heuristic: monitors the behavior.
+- system calls, processes, etc
+* Home Lab Setup [[id:200185ed-6f99-4c2c-aaf9-73f3837d2db9][Home Virtualization Server Lab]]
+** AWS Lightsail
+*** SSH into the ubuntu VPS (Virtual Private Server)
+ Ubuntu public ip: 54.198.121.157
+
+ ssh ubuntu@54.198.121.157
+*** default RSA keys
+**** Video that helped me use the keys: https://support.plesk.com/hc/en-us/articles/360000471513-How-to-connect-to-Amazon-Lightsail-server-via-SSH-with-a-private-key
+
+  $ mv key.pem ~/.ssh/id_rsa
+  $ chmod 600 ~/.ssh/id_rsa
+
+  ssh ubuntu@54.198.121.157
+
+** VM Setup
+*** manjaro 
+**** Virtual Box shared folders
+sudo gpasswd -a $USER vboxsf
+or
+sudo usermod -a UserToAddGroupTo -G vboxsf
+
+**** Virtual Box Guest editions on Manjaro
+sudo pacman -Syu
+Sudo reboot
+sudo pacman -Sy virtualbox-guest-utils
+sudo systemctl reboot
+***** net tools
+- ifconfig depreceted; use $ ip a
+- but you can install it with:
+$ yaourt -S net-tools-debian-ifconfig
+*** Ubuntu 
+
+[[file:Scripts/VMSetup.sh::Virtual Machine Initial Setup Script.][VMSetup bash script]]
+**** ubuntu VBox guest additions and shared folders
+    - add user to group vboxsf
+      $ sudo adduser $USER vboxsf
+    - mount the drive
+**** Ubuntu Packages
+# gcc
+sudo apt install gcc
+# perl (maybe don't need this)
+sudo apt install perl
+# curl
+sudo apt install curl
+# emacs
+sudo apt install emacs
+# spacemacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+# vim
+sudo apt install vim
+# net-tools
+sudo apt install net-tools
+# nmap
+sudo apt install nmap
+# wireshark
+sudo apt install wireshark
+# metasploit framework https://github.com/rapid7/metasploit-framework/wiki/Nightly-Installers
+         
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+  chmod 755 msfinstall && \
+  ./msfinstall
+# hydra
+sudo apt install hydra
+# terminator
+sudo add-apt-repository ppa:gnome-terminator
+sudo apt-get update
+sudo apt-get install terminator
+# John the Ripper
+sudo apt -y install john
+**** Kali repositories
+    # kali linux software repositories
+         https://miloserdov.org/?p=3609
+    sudo sh -c "echo 'deb https://http.kali.org/kali kali-rolling main non-free contrib' > /etc/apt/sources.list.d/kali.list"
+    sudo apt install gnupg
+    wget 'https://archive.kali.org/archive-key.asc'
+    sudo apt-key add archive-key.asc
+    sudo apt update
+# do not upgrade until running the following command:
+    sudo sh -c "echo 'Package: *'>/etc/apt/preferences.d/kali.pref; echo 'Pin: release a=kali-rolling'>>/etc/apt/preferences.d/kali.pref; echo 'Pin-Priority: 50'>>/etc/apt/preferences.d/kali.pref"
+
+    alternatively udpate /etc/apt/preferences.d/kali.pref
+         Package: *
+         Pin: release a=kali-rolling
+         Pin-Priority: 50
+    # seclists /usr/share/seclists
+    sudo apt -y install seclists
+*** BlackArch?
+*** Install source code pro fonts (used by spacemacs by default)
+https://askubuntu.com/questions/193072/how-to-use-the-adobe-source-code-pro-font
+
+**** Script to install source code pro fonts 
+[[file:Scripts/source_code_pro.sh::Install Adone Source Code Pro Fonts][source_code_pro.sh]]
+
+* Full Ethical Hacking Course (Youtube)
+https://www.youtube.com/watch?v=WnN6dbos5u8
+* File Transfer Methods
+*** Python simple http server
+**** Python3
+     $ python3 -m http.server 80
+**** Python 2
+     $ python2 -m SimpleHTTPServer 8000
+* References
+  Captain Crunch
+  Biography of Kevin Mitnick
+  The Conscience of a Hacker
+  wireshark: wireshark.org
+  openVPN
+  IP layer Network Administration with Linux
+  TCP/IP Tutorial and Technical Overview
+  Packet Analysis Reference Guide v3.0
+  
+* Questions
+** Best ways to copy files between VM and host? Rsync possible on local network? see [[File Transfer Methods][File Transfer Methods]] 
+   
+** how to interact in VMs
+*** copy and paste commands
+*** 
+* Learning Paths and Certifications
+** INE courses
+*** Junior Pen Tester Cert eJPT
+   1. Penetration testing prerequisites
+INE cybersecurity user guide
+
+*** eCPTx
+
+** Certifications
+*** Offensive Security
+OSEP
+OSCP
+no to CEH
+*** CISSP
+*** eLearn
+* Reverse Engineering
+** some tools
+https://reverseengineering.stackexchange.com/questions/1817/is-there-any-disassembler-to-rival-ida-pro
+*** IDA Pro
+** Ghidra open source from NSA
+* Things to learn
+** Kubernetes
+** Docker
+** git
+** Emacs stuff
+*** doom emacs
+*** rss org rss reader
+*** org-roam?
+***
+* Things to do
+** Put all the VMSetup and config scripts on github
+** 
+* Scripting
+** Commenting lines with vi 
+There is no block comment on shell script.
+
+Using vi (yes, vi) you can easily comment from line n to m
+
+<ESC>
+:10,100s/^/#/
+
+(that reads, from line 10 to 100 substitute line start (^) with a # sign.)
+
+and un comment with
+
+<ESC>
+:10,100s/^#//
+
+(that reads, from line 10 to 100 substitute line start (^) followed by # with noting //.)
+
+* Windows
+** Active Directory
+*** Domain Controller: windows server running active directory
+- holds the AD DS data store
+- handles authentication and authorization services
+- replicate updates from other domain controllers in the fore
+- Allows admin access to manage domain resources
+*** AD DS data store contains the NTDS.dit
+NTDS.dit - a database that contains all of the information of an Active Directory domain controller as well as password hashes for domain users
+* EMACS
+** (SPACEMACS)
+*** Shell Layer
+https://develop.spacemacs.org/layers/+tools/shell/README.html
+sudo apt install cmake
+sudo apt install libtool-bin
+add shell layers
+*** org-roam
+does not work with emacs 26.3?
+
+
+** Doom
+*** install [[id:922802af-f80e-4d7a-ba39-3c7e68085e41][Migrating to Doom]]
+* Linux Distros
+** Penetration testing
+*** kali offensive security
+*** parrot
+*** black arch
+** General Purpose
+*** manjaro arch based
+*** ubuntu owned by canonical, rules the world
+** Malware analysis
+*** remnux for malware analysis
+* Defensive RA (response action)
+** hunt forward: ambiguously offensive defensive actions
+** defending forward: same as hunt forward

@@ -1,5 +1,20 @@
 #+title: CISSP
-*     Domain 1: Security and Risk Management
+
+https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline
+https://www.isc2.org/certifications/references
+
+* Intro:
+** What is the role of the security function in every organization?
+- A solid understanding of the answer to this question will not only make you a better security professional but will also make it much easier to pass the demanding and difficult CISSP exam. Answers to the question “What is the role of the security function in every organization?” will vary, depending on who is answering. Often, answers will include items such as:
+- All the items listed equate to one phrase that corporate governance focuses on: Organizational VALUE.
+***  Reduce risk    Protect information, IT assets, the company, and its reputation    
+*** Preserve confidentiality and integrity    
+*** Manage availability    
+*** Ensure compliance 
+** Security must enable and support the organization in achieving its goals and objectives.
+** Security nowadays needs to be empowered to protect ALL the assets of the organization and to do that, it needs to report to those who are accountable for the company. That is, either the CEO or the corporate Board of Directors.
+** As a security professional, you must always focus on helping the organization achieve its goals and objectives. You must be an enabler to the business.
+* Domain 1: Security and Risk Management
 ** regulatory compliance
 ** standards and risk frameworks
 ** Incident Response
@@ -31,50 +46,530 @@
 **** Data accuracy
 **** Security
 *** liability: legal responsibility
-** (ISC) 2 Code of Ethics Canons 
-*** compliance with the ISC2 code of ethics is a condition of certification
-***  1) Protect society, the commonwealth, and the infrastructure
-***  2) Act honorably, honestly, justly, responsibly, and legally
-***  3) Provide diligent and competent service to principals
-***  4) Advance and protect the profession
-*** ethical bases
-**** Golden rule – reciprocity
-**** Kant’s categorical imperative - uniformity
-**** Descartes's rule of change – slippery slope
-**** Utilitarian principle – most good
-**** Risk aversion principle – least harm
-**** Avoid harm – do no harm
-**** No free lunch rule – assumes of ownership
-**** Legalism – is it against the law?
-**** Professionalism – is it contrary to the code of ethics?
-**** Demonstrate due care/diligence – reasonable person
-**** Evidentiary guidance – do you have the data?
-**** Client/customer/patient choice – affected people decide
-**** Equity – equal distribution of costs/benefits
-**** Competition – market sets prices/quality
-**** Compassion/last chance – most vulnerable parties protected
-**** Impartiality/objectivity – biases?
-**** Openness/full disclosure – affected persons informed?
-**** Confidentiality – individual security
-**** Trustworthiness/honesty – is IT accountable?
-***  How a Code of Ethics Applies to CISSPs
-**** Informed consent
-**** Higher ethic in the worst case
-**** Change of scale test
-**** Owners’ conservation of ownership
-**** Users’ conservation of ownership
-** legal regulations and ethics
-*** computer game fallacy is the: If the computer let's me do it then it is ok.  The game wouldn't let me do it if it wasn't ok.
-*** Law-abiding citizen fallacy: if it isn't illegal it's ok
-*** Shatterproof fallacy: If I'm not doing harm to the system, then it's okay
-*** Candy-from-a-baby fallacy:  If you didn't want me to steal your stuff, you should've hardened your systems
-*** Hacker fallacy
-*** Free information fallacy:  the concept that information should be free. It should be shared widely and available; that human development is best nurtured by the widest dissemination of information
 ** Policy and Components
-*     Domain 2: Asset Security
-*     Domain 3: Security Architecture and Engineering
-*     Domain 4: Communication and Network Security
-*     Domain 5: Identity and Access Management (IAM)
-*     Domain 6: Security Assessment and Testing
-*     Domain 7: Security Operations
-*     Domain 8: Software Development Security
+the
+
+Witcher, Rob; Berti, John; Hablas, Lou; Mitropoulos, Nick. Destination CISSP: A Concise Guide (p. 35). Destination Certification Inc.. Kindle Edition. 
+One of the authors of this guide, John Berti, has been involved with (ISC)2 for over twenty years; in fact, he was one of the authors of the first Official CISSP guidebook, the Official (ISC)2 Guide to the CISSP Exam ([ISC]2 Press), in the mid 2000s.
+
+Witcher, Rob; Berti, John; Hablas, Lou; Mitropoulos, Nick. Destination CISSP: A Concise Guide (p. 35). Destination Certification Inc.. Kindle Edition.
+** 1.1 - Understand, adhere to, and promote professional ethics
+*** ISC2 Code of Professional Ethics
+**** (ISC)2 Code of Ethics Preamble
+***** The safety and welfare of society and the common good, duty to our principals, and to each other, requires that we adhere, and be seen to adhere, to the highest ethical standards of behavior. 
+***** Therefore, strict adherence to this Code is a condition of certification.
+**** (ISC) 2 Code of Ethics Canons 
+*****  1) Protect society, the commonwealth, and the infrastructure
+*****  2) Act honorably, honestly, justly, responsibly, and legally
+*****  3) Provide diligent and competent service to principals
+*****  4) Advance and protect the profession
+***** compliance with the ISC2 code of ethics is a condition of certification
+***** In both the Preamble and the Canons, the topics are in order of importance, and again, all these items should be memorized as presented. Remember, if a scenario is presented in which there’s a conflict in the Canons, they need to be applied in order.
+***** ethical bases
+****** Golden rule – reciprocity
+****** Kant’s categorical imperative - uniformity
+****** Descartes's rule of change – slippery slope
+****** Utilitarian principle – most good
+****** Risk aversion principle – least harm
+****** Avoid harm – do no harm
+****** No free lunch rule – assumes of ownership
+****** Legalism – is it against the law?
+****** Professionalism – is it contrary to the code of ethics?
+****** Demonstrate due care/diligence – reasonable person
+****** Evidentiary guidance – do you have the data?
+****** Client/customer/patient choice – affected people decide
+****** Equity – equal distribution of costs/benefits
+****** Competition – market sets prices/quality
+****** Compassion/last chance – most vulnerable parties protected
+****** Impartiality/objectivity – biases?
+****** Openness/full disclosure – affected persons informed?
+****** Confidentiality – individual security
+****** Trustworthiness/honesty – is IT accountable?
+***** How a Code of Ethics Applies to CISSPs
+****** Informed consent
+****** Higher ethic in the worst case
+****** Change of scale test
+****** Owners’ conservation of ownership
+****** Users’ conservation of ownership
+*** legal regulations and ethics
+**** computer game fallacy is the: If the computer let's me do it then it is ok
+the computer lets me do it, it must
+be okay. The game wouldn't let me
+do it if it wasn't all right. Right?Page 5 of 12
+A lot of users, especially
+unsophisticated users, don't realize
+that the computer is not a super-
+genius; 
+**** Law-abiding citizen fallacy: if it isn't illegal it's ok
+**** Shatterproof fallacy: If I'm not doing harm to the system, then it's okay
+**** Candy-from-a-baby fallacy:  If you didn't want me to steal your stuff, you should've hardened your systems
+**** Hacker fallacy
+**** Free information fallacy:  the concept that information should be free. It should be shared widely and available; that human development is best nurtured by the widest dissemination of information
+**** Organizational code of ethics
+** 1.2 - Understand and apply security concepts
+*** 1.2.1 Focus of Security
+**** Security must increase the value of an oganization
+***** 1. Allow and enable the organization to achieve its goals and objectives 
+***** 2. Increase the organization’s value
+*** 1.2.2 Confidentiality, integrity, and availability, authenticity and nonrepudiation: the goals of information security or 'asset security'
+**** Confidentiality: Protects and prevents unauthorized disclosure 
+- Protects assets using important principles such as need-to-know and least privilege; prevents unauthorized disclosure
+**** Integrity: Protects and adds value to assets by making them more accurate, more timely, more current, more meaningful 
+- Protects and adds value to assets by making them more accurate, more timely, more current, more meaningful; prevents unauthorized or accidental changes to assets such as information
+**** Availability: Ensures organizational assets are available when required by stakeholders 
+- Protects critical assets based on value to ensure organizational assets are available when required by stakeholders
+**** Authenticity: Proves the source and origin of important valuable assets
+- Proves assets are legitimate and bona fide, and verifies that they are trusted and verified. Proves the source and origin of important valuable assets. Also referred to as “proof of origin.”
+**** Nonrepudiation: Provides assurance that someone cannot deny having done something
+- Provides assurance that someone cannot dispute the validity of something; the inability to refute accountability or responsibility. Also, inability to deny having done something.
+** 1.3 - Evaluate and apply security governance principles
+*** 1.3.1 Alignment of the Security Function to Business Strategy, Goals, Mission, and Objectives
+**** The goal of governance is to enhance organizational value 
+***** the act of governing or overseeing the process of directing something. In other words, governance means to govern properly to allow the organization to achieve its goals and objectives focused on increasing the value of the organization.
+**** Corporate governance is based upon the goals and objectives of the organization 
+**** Security must be managed top down instead of bottom up 
+***** Security governance must align with corporate governance, and security’s goals and objectives should be driven by the organization’s goals and objectives.
+**** Scoping and tailoring are used to align security objectives with organizational goals and objectives 
+***** scoping: determine what security control elements are within scope and which are out of scope
+***** tailoring: refine or enhance security control elements
+**** Security governance must be aligned with corporate governance
+*** 1.3.2 Accountability versus Responsibility
+**** Accountability accountability can never be delegated to anyone else.
+***** the owner of the data is always accountable for the data and therefore liable if there is a data breach.
+***** senior management is accountable for the assets that they manage. On the CISSP exam, if a question asks who is ultimately accountable for the finance system, the best answer would be the VP of Finance—but if they aren’t listed, the next best answer is the person above them in seniority.
+**** Responsibility can be delegated, but the delegator will remain accountable.
+| Accountability                              | Responsibility                         |
+|---------------------------------------------+----------------------------------------|
+| Where the buck stops                        | The doer                               |
+| Ultimate ownership and liability            | In charge of a task or process         |
+| Only one person or group can be accountable | Multiple people can be responsible     |
+| Sets rules and policies                     | Develops plans and implements controls |
+
+Witcher, Rob; Berti, John; Hablas, Lou; Mitropoulos, Nick. Destination CISSP: A Concise Guide (p. 62). Destination Certification Inc.. Kindle Edition. 
+Witcher, Rob; Berti, John; Hablas, Lou; Mitropoulos, Nick. Destination CISSP: A Concise Guide (p. 61). Destination Certification Inc.. Kindle Edition. 
+Witcher, Rob; Berti, John; Hablas, Lou; Mitropoulos, Nick. Destination CISSP: A Concise Guide (p. 61). Destination Certification Inc.. Kindle Edition. 
+*** 1.3.3 Organizational roles and responsibilities
+**** The role of security is to be an enabler 
+**** The owner/controller is the person that created, bought, or is most familiar with an asset 
+**** The processor is the person, function, or group responsible for data and who do things on behalf of the controller
+**** Owners / Controllers/ Functional Leaders / Senior Management Accountable for:
+***** Ensuring that appropriate security controls, consistent with the organization’s security policy, are implemented to protect the organization’s assets
+***** Determining appropriate sensitivity or classification levels    
+***** Determining access privileges
+***** resposibility for data protection may fall to a custodian but accountability, which can't be delegated, is always with the data owner
+**** Information Systems Security Professionals / IT Security Officer Responsible for: 
+***** Design, implementation, management, and review of the organization’s security policies, standards, baselines, procedures, and guidelines
+**** Information Technology (IT) Officer Responsible for: 
+***** Developing and implementing technology solutions 
+***** Working closely with IS and IT Security Professionals and Officers to evaluate security strategies 
+***** Working closely with Business Continuity Management (BCM) team to ensure continuity of operations should disruption occur
+**** IT Function Responsible for: 
+***** Implementing and adhering to security policies
+**** Operator / Administrator Responsible for: 
+***** Managing, troubleshooting, and applying hardware and software patches to systems as necessary
+***** Managing user permissions, per the owner’s specifications 
+***** Administering and managing specific applications and services
+**** Network Administrator Responsible for: 
+***** Maintaining computer networks and resolving issues with them 
+***** Installing and configuring networking equipment and systems and resolving problems
+**** Information Systems Auditors Responsible for: 
+***** Providing management with independent assurance that the security objectives are appropriate 
+***** Determining whether the security policy, standards, baselines, procedures, and guidelines are appropriate and effective to comply with the organization’s security objectives 
+***** Determining whether the objectives have been met
+**** Users Responsible for:    
+***** Adherence to security policies 
+***** Preserving the availability, integrity, and confidentiality of assets when accessing and using them
+**** A big part of implementing the right controls is having the right roles and responsibilities defined, to determine who is accountable and who is responsible. Certain people within an organization are going to be accountable for the protection of personal information; many others are going to be responsible for it. Owners need to have clearly defined accountabilities related to compliance, including:    
+***** Defining classification    
+***** Approving access    
+***** Retention and destruction
+*** 1.3.4 Due care/due diligence
+**** Due care is the responsible protection of assets 
+***** Accountable protection of assets based on the goals and objectives of the organization
+**** Due diligence is the ability to prove due care
+***** Ability to prove due care to stakeholders—upper management, regulators, customers, shareholders, etc.
+*** Organizational processes (e.g., acquisitions, divestitures, governance committees)
+*** Security control frameworks
+**** provide guidelines on how to align the security function with corporate governance. Frameworks like NIST, ISO, COBIT, ITIL, and more will be described more fully. For now, it’s important to know that security frameworks provide comprehensive guidance on how to structure security properly.
+** 1.4 - Determine compliance and other requirements
+*** 1.4.1 Contractual, legal, industry standards, and regulatory requirements
+**** Controls should align with compliance requirements 
+**** Legal, privacy, and audit/compliance functions are usually the best sources to determine compliance requirements
+**** Laws 
+***** Specific laws that an organization must comply with are based on the assets owned or managed, or the industry, jurisdiction, or country in which the organization operates 
+***** Examples of laws: 
+****** Health Insurance Portability and Accountability Act (HIPAA)
+******* national standards to protect sensitive patient health information from being disclosed without the patient’s consent or knowledge
+https://www.cdc.gov/phlp/publications/topic/hipaa.html
+****** Gramm–Leach–Bliley Act (GLBA) also known as the Financial Services Modernization Act of 1999
+******* An Act to enhance competition in the financial services industry by providing a prudential framework for the affiliation of banks, securities firms, and other financial service providers, and for other purposes
+https://en.wikipedia.org/wiki/Gramm%E2%80%93Leach%E2%80%93Bliley_Act
+****** Childrens' Online Privacy Rights Act (COPPA)
+******* COPPA imposes certain requirements on operators of websites or online services directed to children under 13 years of age, and on operators of other websites or online services that have actual knowledge that they are collecting personal information online from a child under 13 years of age
+https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa
+****** Consumer Online Privacy Rights Act (COPRA)
+******* A bill to provide consumers with foundational data privacy rights, create strong oversight mechanisms, and establish meaningful enforcement.
+******* 2023: this bill failed to pass
+https://www.govtrack.us/congress/bills/117/s3195
+****** Family Educational Rights and Privacy Act (FERPA)
+******* protects the privacy of student education records. The law applies to all schools that receive funds under an applicable program of the U.S. Department of Education.
+https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html
+****** General Data Protection Regulation (GDPR)
+******* European Union regulation on information privacy in the European Union (EU) and the European Economic Area (EEA). The GDPR is an important component of EU privacy law and human rights law, in particular Article 8(1) of the Charter of Fundamental Rights of the European Union. It also governs the transfer of personal data outside the EU and EEA. 
+******* The GDPR's goals are to enhance individuals' control and rights over their personal information and to simplify the regulations for international business.[1] It supersedes the Data Protection Directive 95/46/EC and, among other things, simplifies the terminology.
+https://en.wikipedia.org/wiki/General_Data_Protection_Regulation
+****** Federal Information Security Modernization Act (FISMA)
+******* requires each federal agency to develop, document, and implement an agency-wide program to provide information security for the information and information systems that support the operations and assets of the agency, including those provided or managed by another agency, contractor, or other source
+https://en.wikipedia.org/wiki/Federal_Information_Security_Management_Act_of_2002
+****** Digital Millennium Copyright Act (DMCA)
+******* 1998 United States copyright law that implements two 1996 treaties of the World Intellectual Property Organization (WIPO). 
+******* It criminalizes production and dissemination of technology, devices, or services intended to circumvent measures that control access to copyrighted works (commonly known as digital rights management or DRM). 
+******* It also criminalizes the act of circumventing an access control, whether or not there is actual infringement of copyright itself. 
+******* In addition, the DMCA heightens the penalties for copyright infringement on the Internet.
+https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act
+***** Regulations 
+****** Specific regulations that an organization must comply with are based on the assets owned or managed, the industry, jurisdiction, or country in which the organization operates 
+****** Examples of regulations: 
+The United States government has put two types of regulations in place to control exports of military-relevant items. The U.S. government has to give specific permission for equipment before those items can be handed over to a non-US person, company, or government. 
+https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations
+******* International Traffic in Arms Regulations (ITAR)
+******** covers weapons and defense articles specifically (such as missiles);
+******* Export Administration Regulations (EAR)
+******** covers items that may have uses in defense articles (such as a radar component used in a certain missile). 
+******* Encryption Export Controls
+***** Industry Standards 
+******* Specific industries often have associated standards—procedural and technical rules—that help guide the activities of organizations 
+******* Examples of industry standards: 
+******** Critical Infrastructure Protection (NERC CIP), 
+******** National Institute of Standards and Technology (NIST) 
+******** International Organization for Standardization (ISO) 
+***** Import/Export Controls See Domain 1 (section 1.5.3)
+***** Transborder Data Flow Regulations See Domain 1 (section 1.5.4) 
+***** Assets See Domain 2 (section 2.1) 
+***** Personal Data See Domain 2 (section 1.5.5) 
+***** Corporate Policies See Domain 1 (section 1.7)
+*** Privacy requirements
+** 1.5 - Understand legal and regulatory issues that pertain to information security in a holistic context
+*** Cybercrimes and data breaches
+*** Licensing and Intellectual Property (IP) requirements
+*** Import/export controls
+*** Transborder data flow
+*** Privacy
+** 1.6 - Understand requirements for investigation types (i.e., administrative, criminal, civil, regulatory, industry standards)
+** 1.7 - Develop, document, and implement security policy, standards, procedures, and guidelines
+** 1.8 - Identify, analyze, and prioritize Business Continuity (BC) requirements
+*** Business Impact Analysis (BIA)
+*** Develop and document the scope and the plan
+
+** 1.9 - Contribute to and enforce personnel security policies and procedures
+*** Candidate screening and hiring
+*** Employment agreements and policies
+*** Onboarding, transfers, and termination processes
+*** Vendor, consultant, and contractor agreements and controls
+*** Compliance policy requirements
+*** Privacy policy requirements
+** 1.10 - Understand and apply risk management concepts
+*** Identify threats and vulnerabilities
+*** Risk assessment/analysis
+*** Risk response
+*** Countermeasure selection and implementation
+*** Applicable types of controls (e.g., preventive, detective, corrective)
+*** Control assessments (security and privacy)
+*** Monitoring and measurement
+*** Reporting
+*** Continuous improvement (e.g., Risk maturity modeling)
+*** Risk frameworks
+** 1.11 - Understand and apply threat modeling concepts and methodologies
+** 1.12 - Apply Supply Chain Risk Management (SCRM) concepts
+*** Risks associated with hardware, software, and services
+*** Third-party assessment and monitoring
+*** Minimum security requirements
+*** Service level requirements
+** 1.13 - Establish and maintain a security awareness, education, and training program
+*** Methods and techniques to present awareness and training (e.g., social engineering, phishing, security champions, gamification)
+*** Periodic content reviews
+*** Program effectiveness evaluation
+* Domain 2: Asset Security
+** 2.1 - Identify and classify information and assets
+*** Data classification
+*** Asset Classification
+** 2.2 - Establish information and asset handling requirements
+** 2.3 - Provision resources securely
+*** Information and asset ownership
+*** Asset inventory (e.g., tangible, intangible)
+*** Asset management
+** 2.4 - Manage data lifecycle
+*** Data roles (i.e., owners, controllers, custodians, processors, users/subjects)
+*** Data collection
+*** Data location
+*** Data maintenance
+*** Data retention
+*** Data remanence
+*** Data destruction
+** 2.5 - Ensure appropriate asset retention (e.g., End-of-Life (EOL), End-of-Support (EOS))
+** 2.6 - Determine data security controls and compliance requirements
+*** Data states (e.g., in use, in transit, at rest)
+*** Scoping and tailoring
+*** Standards selection
+*** Data protection methods (e.g., Digital Rights Management (DRM), Data Loss Prevention (DLP), Cloud Access Security Broker (CASB))
+* Domain 3: Security Architecture and Engineering
+** 3.1 - Research, implement and manage engineering processes using secure design principles
+*** Threat modeling
+*** Least privilege
+*** Defense in depth
+*** Secure defaults
+*** Fail securely
+*** Separation of Duties (SoD)
+*** Keep it simple
+*** Zero Trust
+*** Privacy by design
+*** Trust but verify
+** 3.2 - Understand the fundamental concepts of security models (e.g., Biba, Star Model, Bell-LaPadula)
+*** Shared responsibility
+** 3.3 - Select controls based upon systems security requirements
+** 3.4 - Understand security capabilities of Information Systems (IS) (e.g., memory protection, Trusted Platform Module (TPM), encryption/decryption)
+** 3.5 - Assess and mitigate the vulnerabilities of security architectures, designs, and solution elements
+*** Client-based systems
+*** Server-based systems
+*** Database systems
+*** Cryptographic systems
+*** Industrial Control Systems (ICS)
+*** Cloud-based systems (e.g., Software as a Service (SaaS), Infrastructure as a Service (IaaS), Platform as a Service (PaaS))
+*** Distributed systems
+*** Internet of Things (IoT)
+*** Microservices
+*** Containerization
+*** Serverless
+*** Embedded systems
+*** High-Performance Computing (HPC) systems
+*** Edge computing systems
+*** Virtualized systems
+** 3.6 - Select and determine cryptographic solutions
+*** Cryptographic life cycle (e.g., keys, algorithm selection)
+*** Cryptographic methods (e.g., symmetric, asymmetric, elliptic curves, quantum)
+*** Public Key Infrastructure (PKI)
+*** Key management practices
+*** Digital signatures and digital certificates
+*** Non-repudiation
+*** Integrity (e.g., hashing)
+** 3.7 - Understand methods of cryptanalytic attacks
+*** Brute force
+*** Ciphertext only
+*** Known plaintext
+*** Frequency analysis
+*** Chosen ciphertext
+*** Implementation attacks
+*** Side-channel
+*** Fault injection
+*** Timing
+*** Man-in-the-Middle (MITM)
+*** Pass the hash
+*** Kerberos exploitation
+*** Ransomware
+** 3.8 - Apply security principles to site and facility design
+** 3.9 - Design site and facility security controls
+*** Wiring closets/intermediate distribution facilities
+*** Server rooms/data centers
+*** Media storage facilities
+*** Evidence storage
+*** Restricted and work area security
+*** Utilities and Heating, Ventilation, and Air Conditioning (HVAC)
+*** Environmental issues
+*** Fire prevention, detection, and suppression
+*** Power (e.g., redundant, backup)
+* Domain 4: Communication and Network Security
+** 4.1 - Assess and implement secure design principles in network architectures
+*** Open System Interconnection (OSI) and Transmission Control Protocol/Internet Protocol (TCP/IP) models
+*** Internet Protocol (IP) networking (e.g., Internet Protocol Security (IPSec), Internet Protocol (IP) v4/6)
+*** Secure protocols
+*** Implications of multilayer protocols
+*** Converged protocols (e.g., Fiber Channel Over Ethernet (FCoE), Internet Small Computer Systems Interface (iSCSI), Voice over Internet Protocol (VoIP))
+*** Micro-segmentation (e.g., Software Defined Networks (SDN), Virtual eXtensible Local Area Network (VXLAN), Encapsulation, Software-Defined Wide Area Network (SD-WAN))
+*** Wireless networks (e.g., Li-Fi, Wi-Fi, Zigbee, satellite)
+*** Cellular networks (e.g., 4G, 5G)
+*** Content Distribution Networks (CDN)
+** 4.2 - Secure network components
+*** Operation of hardware (e.g., redundant power, warranty, support)
+*** Transmission media
+*** Network Access Control (NAC) devices
+*** Endpoint security
+** 4.3 - Implement secure communication channels according to design
+*** Voice
+*** Multimedia collaboration
+*** Remote access
+*** Data communications
+*** Virtualized networks
+*** Third-party connectivity
+* Domain 5: Identity and Access Management (IAM)
+** 5.1 - Control physical and logical access to assets
+*** Information
+*** Systems
+*** Devices
+*** Facilities
+*** Applications
+** 5.2 - Manage identification and authentication of people, devices, and services
+*** Identity Management (IdM) implementation
+*** Single/Multi-Factor Authentication (MFA)
+*** Accountability
+*** Session management
+*** Registration, proofing, and establishment of identity
+*** Federated Identity Management (FIM)
+*** Credential management systems
+*** Single Sign On (SSO)
+*** Just-In-Time (JIT)
+** 5.3 - Federated identity with a third-party service
+*** On-premise
+*** Cloud
+*** Hybrid
+** 5.4 - Implement and manage authorization mechanisms
+*** Role Based Access Control (RBAC)
+*** Rule based access control
+*** Mandatory Access Control (MAC)
+*** Discretionary Access Control (DAC)
+*** Attribute Based Access Control (ABAC)
+*** Risk based access control
+** 5.5 - Manage the identity and access provisioning lifecycle
+*** Account access review (e.g., user, system, service)
+*** Provisioning and deprovisioning (e.g., on /off boarding and transfers)
+*** Role definition (e.g., people assigned to new roles)
+*** Privilege escalation (e.g., managed service accounts, use of sudo, minimizing its use)
+** 5.6 - Implement authentication systems
+*** OpenID Connect (OIDC)/Open Authorization (Oauth)
+*** Security Assertion Markup Language (SAML)
+*** Kerberos
+*** Remote Authentication Dial-In User Service (RADIUS)/Terminal Access Controller Access Control System Plus (TACACS+)
+* Domain 6: Security Assessment and Testing
+** 6.1 - Design and validate assessment, test, and audit strategies
+*** Internal
+*** External
+*** Third-party
+** 6.2 - Conduct security control testing
+*** Vulnerability assessment
+*** Penetration testing
+*** Log reviews
+*** Synthetic transactions
+*** Code review and testing
+*** Misuse case testing
+*** Test coverage analysis
+*** Interface testing
+*** Breach attack simulations
+*** Compliance checks
+** 6.3 - Collect security process data (e.g., technical and administrative)
+*** Account management
+*** Management review and approval
+*** Key performance and risk indicators
+*** Backup verification data
+*** Training and awareness
+*** Disaster Recovery (DR) and Business Continuity (BC)
+** 6.4 - Analyze test output and generate report
+*** Remediation
+*** Exception handling
+*** Ethical disclosure
+** 6.5 - Conduct or facilitate security audits
+*** Internal
+*** External
+*** Third-party
+* Domain 7: Security Operations
+** 7.1 - Understand and comply with investigations
+*** Evidence collection and handling
+*** Reporting and documentation
+*** Investigative techniques
+*** Digital forensics tools, tactics, and procedures
+*** Artifacts (e.g., computer, network, mobile device)
+** 7.2 - Conduct logging and monitoring activities
+*** Intrusion detection and prevention
+*** Security Information and Event Management (SIEM)
+*** Continuous monitoring
+*** Egress monitoring
+*** Log management
+*** Threat intelligence (e.g., threat feeds, threat hunting)
+*** User and Entity Behavior Analytics (UEBA)
+** 7.3 - Perform Configuration Management (CM) (e.g., provisioning, baselining, automation)
+** 7.4 - Apply foundational security operations concepts
+*** Need-to-know/least privilege
+*** Separation of Duties (SoD) and responsibilities
+*** Privileged account management
+*** Job rotation
+*** Service Level Agreements (SLAs)
+** 7.5 - Apply resource protection
+*** Media management
+*** Media protection techniques
+** 7.6 - Conduct incident management
+*** Detection
+*** Response
+*** Mitigation
+*** Reporting
+*** Recovery
+*** Remediation
+*** Lessons learned
+** 7.7 - Operate and maintain detective and preventative measures
+*** Firewalls (e.g., next generation, web application, network)
+*** Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS)
+*** Whitelisting/blacklisting
+*** Third-party provided security services
+*** Sandboxing
+*** Honeypots/honeynets
+*** Anti-malware
+*** Machine learning and Artificial Intelligence (AI) based tools
+** 7.8 - Implement and support patch and vulnerability management
+** 7.9 - Understand and participate in change management processes
+** 7.10 - Implement recovery strategies
+*** Backup storage strategies
+*** Recovery site strategies
+*** Multiple processing sites
+*** System resilience, High Availability (HA), Quality of Service (QoS), and fault tolerance
+** 7.11 - Implement Disaster Recovery (DR) processes
+*** Response
+*** Personnel
+*** Communications
+*** Assessment
+*** Restoration
+*** Training and awareness
+*** Lessons learned
+** 7.12 - Test Disaster Recovery Plans (DRP)
+*** Read-through/tabletop
+*** Walkthrough
+*** Simulation
+*** Parallel
+*** Full interruption
+** 7.13 - Participate in Business Continuity (BC) planning and exercises
+** 7.14 - Implement and manage physical security
+*** Perimeter security controls
+*** Internal security controls
+** 7.15 - Address personnel safety and security concerns
+*** Travel
+*** Security training and awareness
+*** Emergency management
+*** Duress
+* Domain 8: Software Development Security
+** 8.1 - Understand and integrate security in the Software Development Life Cycle (SDLC)
+*** Development methodologies (e.g., Agile, Waterfall, DevOps, DevSecOps)
+*** Maturity models (e.g., Capability Maturity Model (CMM), Software Assurance Maturity Model (SAMM))
+*** Operation and maintenance
+*** Change management
+*** Integrated Product Team (IPT)
+** 8.2 - Identify and apply security controls in software development ecosystems
+*** Programming languages
+*** Libraries
+*** Tool sets
+*** Integrated Development Environment (IDE)
+*** Runtime
+*** Continuous Integration and Continuous Delivery (CI/CD)
+*** Security Orchestration, Automation, and Response (SOAR)
+*** Software Configuration Management (SCM)
+*** Code repositories
+*** Application security testing (e.g., Static Application Security Testing (SAST), Dynamic Application Security Testing (DAST))
+** 8.3 - Assess the effectiveness of software security
+*** Auditing and logging of changes
+*** Risk analysis and mitigation
+** 8.4 - Assess security impact of acquired software
+*** Commercial-off-the-shelf (COTS)
+*** Open source
+*** Third-party
+*** Managed services (e.g., Software as a Service (SaaS), Infrastructure as a Service (IaaS), Platform as a Service (PaaS))
+** 8.5 - Define and apply secure coding guidelines and standards
+*** Security weaknesses and vulnerabilities at the source-code level
+*** Security of Application Programming Interfaces (APIs)
+*** Secure coding practices
+*** Software-defined security
+

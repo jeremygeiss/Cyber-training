@@ -1,0 +1,14 @@
+#+TITLE:  Python for Everybody
+* Hello
+#+begin_src python
+name = input('Enter your name: ')
+print("Hello ", name)
+#+end_src
+* hours 
+
+#+begin_src python
+hrs = input("Enter hours:")
+rate = input("Enter hourly rate:")
+Pay = float(hrs) * float(rate)
+print("Pay:",Pay)
+#+end_src
